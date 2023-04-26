@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AgendaCell" id="KGk-i7-Jjw" customClass="Agenda_TableViewCell" customModule="PoliticosTRC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="px4-k8-tlb">
+                        <rect key="frame" x="13" y="12.666666666666671" width="349" height="150"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="politicos_28" translatesAutoresizingMaskIntoConstraints="NO" id="exB-BJ-Udn">
+                                <rect key="frame" x="10" y="10.666666666666671" width="128.66666666666666" height="128.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="exB-BJ-Udn" secondAttribute="height" multiplier="1:1" id="uCD-IW-xZe"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VIC-J8-V9e">
+                                <rect key="frame" x="143.66666666666663" y="9.3333333333333286" width="200.33333333333337" height="131"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ZlG-eT-qOQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="200.33333333333334" height="80.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reunion Con Empresarios" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s3Z-F1-tD1">
+                                                <rect key="frame" x="0.0" y="0.0" width="200.33333333333334" height="44"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centro de convencines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cYD-08-Hb6">
+                                                <rect key="frame" x="0.0" y="44" width="200.33333333333334" height="18"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torreón Coahuila" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-GC-atg">
+                                                <rect key="frame" x="0.0" y="62.000000000000007" width="200.33333333333334" height="18.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="C52-Mh-ueN">
+                                        <rect key="frame" x="0.0" y="90.333333333333329" width="200.33333333333334" height="40.666666666666671"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27 Abril 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H1-hK-oze">
+                                                <rect key="frame" x="0.0" y="0.0" width="200.33333333333334" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                                <color key="textColor" name="FirstColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 hrs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVm-9U-cJb">
+                                                <rect key="frame" x="0.0" y="20.333333333333329" width="200.33333333333334" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="exB-BJ-Udn" firstAttribute="leading" secondItem="px4-k8-tlb" secondAttribute="leading" constant="10" id="7o5-1w-WJJ"/>
+                            <constraint firstItem="VIC-J8-V9e" firstAttribute="leading" secondItem="exB-BJ-Udn" secondAttribute="trailing" constant="5" id="FyG-Xs-iNP"/>
+                            <constraint firstItem="exB-BJ-Udn" firstAttribute="centerY" secondItem="px4-k8-tlb" secondAttribute="centerY" id="HKL-3w-lIW"/>
+                            <constraint firstItem="exB-BJ-Udn" firstAttribute="height" secondItem="px4-k8-tlb" secondAttribute="height" multiplier="0.857143" id="NaY-kr-ygT"/>
+                            <constraint firstItem="VIC-J8-V9e" firstAttribute="height" secondItem="px4-k8-tlb" secondAttribute="height" multiplier="0.871429" id="ca0-IL-KoF"/>
+                            <constraint firstAttribute="trailing" secondItem="VIC-J8-V9e" secondAttribute="trailing" constant="5" id="cc6-M9-Azm"/>
+                            <constraint firstItem="VIC-J8-V9e" firstAttribute="centerY" secondItem="px4-k8-tlb" secondAttribute="centerY" id="wd0-zs-Sx4"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" systemColor="systemGray2Color"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="px4-k8-tlb" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.857143" id="A9M-pG-9xG"/>
+                    <constraint firstItem="px4-k8-tlb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QdD-VN-Fci"/>
+                    <constraint firstItem="px4-k8-tlb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="RS7-ES-9Lq"/>
+                    <constraint firstItem="px4-k8-tlb" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.93" id="i7Q-kg-Pmx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressEvent" destination="gmJ-GC-atg" id="GUE-kH-GnG"/>
+                <outlet property="dateEvent" destination="4H1-hK-oze" id="Rjh-Bc-ikz"/>
+                <outlet property="hourEvent" destination="lVm-9U-cJb" id="l47-BT-LNC"/>
+                <outlet property="imgEvent" destination="exB-BJ-Udn" id="R0c-pp-eQa"/>
+                <outlet property="placeEvent" destination="cYD-08-Hb6" id="oso-Qt-0tK"/>
+                <outlet property="titleEvent" destination="s3Z-F1-tD1" id="7of-pc-4sH"/>
+            </connections>
+            <point key="canvasLocation" x="-37" y="28"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="politicos_28" width="116" height="116"/>
+        <namedColor name="FirstColor">
+            <color red="0.79607843137254897" green="0.17647058823529413" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
