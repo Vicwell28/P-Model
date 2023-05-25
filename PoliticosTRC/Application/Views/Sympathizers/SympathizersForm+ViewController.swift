@@ -37,13 +37,13 @@ class SympathizersForm_ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
@@ -65,6 +65,7 @@ class SympathizersForm_ViewController: UIViewController {
     @IBOutlet weak var imgPerfil: UIImageView!
     
     // MARK: - Public let / var
+    @IBOutlet weak var viewCorrect: UIView!
     public var miembrosList : MiembrosViewModel!
     
     // MARK: - Private let / var
@@ -114,7 +115,26 @@ class SympathizersForm_ViewController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { Timer in
             self.dismissViewControllerLoader()
-                        
+            self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+            
+            self.viewCorrect.isHidden = false
+            self.viewCorrect.alpha = 0
+            
+            UIView.animate(withDuration: 1.5) {
+                self.viewCorrect.alpha = 1
+                
+            } completion: { Bool in
+                
+                UIView.animate(withDuration: 1.5) {
+                    self.viewCorrect.alpha = 0
+                    
+                } completion: { Bool in
+                    self.viewCorrect.isHidden = true
+                    
+                }
+                
+            }
+            
             self.miembrosList.dataSoureMiembros.insert(
                 MiembroModel(
                     name: "\(self.txfName.text!) \(self.txtLastNamePaterno.text!) \(self.txfLastNameMaterno.text!)",
@@ -142,7 +162,7 @@ class SympathizersForm_ViewController: UIViewController {
         }
         
         
-      
+        
         
     }
     
@@ -176,7 +196,7 @@ class SympathizersForm_ViewController: UIViewController {
             self.verifyData()
             
             
-          
+            
         }
     }
 }
@@ -201,7 +221,7 @@ extension SympathizersForm_ViewController: UITextFieldDelegate{
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         var aRect = self.view.frame
-
+        
         aRect.size.height -= kbSize.height + self.textFieldActive!.superview!.frame.size.height + 40
         
         if !aRect.contains(self.textFieldActive!.superview!.frame.origin) {
@@ -242,7 +262,7 @@ extension SympathizersForm_ViewController: UITextFieldDelegate{
 
 // MARK: - Private Func
 extension SympathizersForm_ViewController: UITextViewDelegate {
-
+    
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView == self.txvAddress {
             if let text = self.txvAddress.text, text.isEmpty {

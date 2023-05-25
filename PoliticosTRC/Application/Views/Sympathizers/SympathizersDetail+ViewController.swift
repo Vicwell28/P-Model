@@ -25,6 +25,9 @@ class SympathizersDetail_ViewController: UIViewController {
         
         self.btnCloseAddSupport.layer.cornerRadius = self.btnCloseAddSupport.frame.size.width / 2
         self.overrideUserInterfaceStyle = .light
+        
+        
+        self.dataSourceFiltred = self.dataSourceSupported
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,35 +36,46 @@ class SympathizersDetail_ViewController: UIViewController {
         self.lblName.text = self.miembroDetail!.name
         self.lblDate.text = "Simpatizante desde hace \(self.miembroDetail!.months) meses"
         self.imgPerfil.setCircle()
+        
+        if self.firstConstraintBtnSeach == nil {
+            self.firstConstraintBtnSeach = NSLayoutConstraint(item: self.txtFieldSearch!.superview!.superview!, attribute: .trailing, relatedBy: .equal, toItem: self.txtFieldSearch!.superview!, attribute: .trailing, multiplier: 1.0, constant: 0)
+            self.view.addConstraint(self.firstConstraintBtnSeach!)
+            self.view.layoutIfNeeded()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
+        
     }
     
     @IBOutlet weak var btnCloseAddSupport: UIButton!
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     
     // MARK: - IBOutlet
+    @IBOutlet weak var viewSearch: UIControl!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imgPerfil: UIImageView!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var viewVisualEffect: UIVisualEffectView!
+    
+    @IBOutlet weak var txtFieldSearch: UITextField!
+    @IBOutlet weak var btnSearchCancel: UIButton!
     // MARK: - Public let / var
     @IBOutlet weak var tableViewSupport: UITableView!
+    private var firstConstraintBtnSeach: NSLayoutConstraint?
+    private var secondConstraintBtnSeach: NSLayoutConstraint?
     
     private let dataSourceSupported: [String] = [
         "Tinaco",
@@ -70,6 +84,31 @@ class SympathizersDetail_ViewController: UIViewController {
         "Pintura"
     ].shuffled()
     
+    private var dataSourceFiltred = [String]()
+    
+    
+    
+    
+    
+    @IBAction func seachBarValueChange(_ sender: UITextField) {
+        if let txt = sender.text {
+            if txt.isEmpty {
+                print("Lo dejo vacio")
+                self.dataSourceFiltred = self.dataSourceSupported
+            } else {
+                print("Texto buscado: \(txt)")
+                self.dataSourceFiltred = self.dataSourceSupported.filter({ MiembroModel in
+                    MiembroModel.lowercased().contains(txt.lowercased())
+                })
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+    
+    
+    
     
     // MARK: - Private let / var
     public var miembroDetail : MiembroModel!
@@ -77,9 +116,9 @@ class SympathizersDetail_ViewController: UIViewController {
     @IBAction func dissmisViewVisualEffect(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0.25) {
-            self.viewVisualEffect.alpha = 0
+            self.viewSearch.alpha = 0
         } completion: { Bool in
-            self.viewVisualEffect.isHidden.toggle()
+            self.viewSearch.isHidden.toggle()
         }
     }
     
@@ -95,11 +134,11 @@ class SympathizersDetail_ViewController: UIViewController {
             sender.transform = CGAffineTransform(translationX: 1, y: 1)
             sender.layer.shadowOpacity = 0.75
         } completion: { Bool in
-            self.viewVisualEffect.isHidden.toggle()
-            self.view.bringSubviewToFront(self.viewVisualEffect)
-            self.viewVisualEffect.alpha = 0
+            self.viewSearch.isHidden.toggle()
+            self.view.bringSubviewToFront(self.viewSearch)
+            self.viewSearch.alpha = 0
             UIView.animate(withDuration: 0.25) {
-                self.viewVisualEffect.alpha = 1
+                self.viewSearch.alpha = 1
             }
         }
     }
@@ -110,6 +149,43 @@ extension UIImageView {
         self.layer.cornerRadius = self.frame.size.width / 2
     }
 }
+
+extension SympathizersDetail_ViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == self.txtFieldSearch {
+            self.view.endEditing(true)
+        }
+        
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        self.firstConstraintBtnSeach = NSLayoutConstraint(item: self.txtFieldSearch!.superview!.superview!, attribute: .trailing, relatedBy: .equal, toItem: self.txtFieldSearch!.superview!, attribute: .trailing, multiplier: 1.0, constant: 0)
+        
+        self.view.removeConstraint(self.secondConstraintBtnSeach!)
+        self.view.addConstraint(self.firstConstraintBtnSeach!)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        self.secondConstraintBtnSeach = NSLayoutConstraint(item: self.txtFieldSearch!.superview!, attribute: .trailing, relatedBy: .equal, toItem: self.btnSearchCancel, attribute: .leading, multiplier: 1.0, constant: -8.0)
+        
+        self.view.removeConstraint(self.firstConstraintBtnSeach!)
+        self.view.addConstraint(self.secondConstraintBtnSeach!)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+}
+
+
 
 
 
@@ -123,15 +199,15 @@ extension SympathizersDetail_ViewController: UITableViewDelegate, UITableViewDat
             
             cell.lblData.text = self.miembroDetail!.supportGranted[indexPath.row].dateOfSupportGranted
             cell.lblSupport.text = self.miembroDetail!.supportGranted[indexPath.row].supportedGranded.uppercased()
-
+            
             return cell
             
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! Simple_TableViewCell
         
-        cell.lblUnique.text = self.dataSourceSupported[indexPath.row].uppercased()
-
+        cell.lblUnique.text = self.dataSourceFiltred[indexPath.row].uppercased()
+        
         return cell
         
         
@@ -143,18 +219,18 @@ extension SympathizersDetail_ViewController: UITableViewDelegate, UITableViewDat
             return self.miembroDetail!.supportGranted.count
         }
         
-        return self.dataSourceSupported.count
+        return self.dataSourceFiltred.count
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-                
+        
         if tableView == self.tableViewSupport {
             
-            let support = self.dataSourceSupported[indexPath.row]
+            let support = self.dataSourceFiltred[indexPath.row]
             let date = Date()
-
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .short
             dateFormatter.timeStyle = .none
@@ -168,12 +244,12 @@ extension SympathizersDetail_ViewController: UITableViewDelegate, UITableViewDat
             self.tableView.reloadData()
             
             UIView.animate(withDuration: 0.25) {
-                self.viewVisualEffect.alpha = 0
+                self.viewSearch.alpha = 0
             } completion: { Bool in
-                self.viewVisualEffect.isHidden.toggle()
-
+                self.viewSearch.isHidden.toggle()
+                
             }
-
+            
         }
     }
     

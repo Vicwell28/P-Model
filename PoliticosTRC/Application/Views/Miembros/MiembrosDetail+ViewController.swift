@@ -30,17 +30,17 @@ class MiembrosDetail_ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         print(self.miembroWithLevelPlain)
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
+        
     }
     
     @IBOutlet weak var lastlbl: UILabel!
@@ -48,7 +48,7 @@ class MiembrosDetail_ViewController: UIViewController {
     
     // MARK: - IBOutlet
     @IBOutlet weak var imgPerfil: UIImageView!
-
+    
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPuesto: UILabel!
     
@@ -77,7 +77,7 @@ class MiembrosDetail_ViewController: UIViewController {
     
     private func callNumber(phoneNumber: String) {
         guard let url = URL(string: "telprompt://\(phoneNumber)"),
-            UIApplication.shared.canOpenURL(url) else {
+              UIApplication.shared.canOpenURL(url) else {
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)

@@ -39,6 +39,12 @@
 		C1C3DDEE29F30F3E001D277C /* SympathizersDetail+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3DDED29F30F3E001D277C /* SympathizersDetail+ViewController.swift */; };
 		C1C3DDF029F30F8D001D277C /* SympathizersForm+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3DDEF29F30F8D001D277C /* SympathizersForm+ViewController.swift */; };
 		C1C3DDF229F310DB001D277C /* MiembrosDetail+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3DDF129F310DB001D277C /* MiembrosDetail+ViewController.swift */; };
+		C1D7660D2A1FD5A700B9EFA3 /* MiembroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7660C2A1FD5A700B9EFA3 /* MiembroModel.swift */; };
+		C1D7660F2A1FD5B700B9EFA3 /* AgendaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D7660E2A1FD5B700B9EFA3 /* AgendaModel.swift */; };
+		C1D766112A1FD5CB00B9EFA3 /* CitizenReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D766102A1FD5CB00B9EFA3 /* CitizenReportModel.swift */; };
+		C1D766132A1FD5D700B9EFA3 /* SympathizersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D766122A1FD5D700B9EFA3 /* SympathizersModel.swift */; };
+		C1D766152A1FD5EA00B9EFA3 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D766142A1FD5EA00B9EFA3 /* HomeModel.swift */; };
+		C1D766172A1FD5F900B9EFA3 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D766162A1FD5F900B9EFA3 /* AuthModel.swift */; };
 		C1DE4F8529F8DB58007A8B7E /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE4F8429F8DB58007A8B7E /* Extension+ViewController.swift */; };
 		C1FBCC2329F0A5CE00C14A9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FBCC2229F0A5CE00C14A9F /* AppDelegate.swift */; };
 		C1FBCC2529F0A5CE00C14A9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FBCC2429F0A5CE00C14A9F /* SceneDelegate.swift */; };
@@ -83,6 +89,12 @@
 		C1C3DDED29F30F3E001D277C /* SympathizersDetail+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SympathizersDetail+ViewController.swift"; sourceTree = "<group>"; };
 		C1C3DDEF29F30F8D001D277C /* SympathizersForm+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SympathizersForm+ViewController.swift"; sourceTree = "<group>"; };
 		C1C3DDF129F310DB001D277C /* MiembrosDetail+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MiembrosDetail+ViewController.swift"; sourceTree = "<group>"; };
+		C1D7660C2A1FD5A700B9EFA3 /* MiembroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiembroModel.swift; sourceTree = "<group>"; };
+		C1D7660E2A1FD5B700B9EFA3 /* AgendaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaModel.swift; sourceTree = "<group>"; };
+		C1D766102A1FD5CB00B9EFA3 /* CitizenReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenReportModel.swift; sourceTree = "<group>"; };
+		C1D766122A1FD5D700B9EFA3 /* SympathizersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SympathizersModel.swift; sourceTree = "<group>"; };
+		C1D766142A1FD5EA00B9EFA3 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		C1D766162A1FD5F900B9EFA3 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		C1DE4F8429F8DB58007A8B7E /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
 		C1FBCC1F29F0A5CE00C14A9F /* PoliticosTRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoliticosTRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FBCC2229F0A5CE00C14A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +213,7 @@
 		C19FAEAF29F0C1900011A3B3 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				C1D766162A1FD5F900B9EFA3 /* AuthModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -216,6 +229,7 @@
 		C19FAEB229F0C19E0011A3B3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C1D766142A1FD5EA00B9EFA3 /* HomeModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -231,6 +245,7 @@
 		C19FAEB529F0C1AD0011A3B3 /* Sympathizers */ = {
 			isa = PBXGroup;
 			children = (
+				C1D766122A1FD5D700B9EFA3 /* SympathizersModel.swift */,
 			);
 			path = Sympathizers;
 			sourceTree = "<group>";
@@ -246,6 +261,7 @@
 		C19FAEB829F0C1BC0011A3B3 /* Citizen Report */ = {
 			isa = PBXGroup;
 			children = (
+				C1D766102A1FD5CB00B9EFA3 /* CitizenReportModel.swift */,
 			);
 			path = "Citizen Report";
 			sourceTree = "<group>";
@@ -261,6 +277,7 @@
 		C19FAEBB29F0C1C80011A3B3 /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				C1D7660E2A1FD5B700B9EFA3 /* AgendaModel.swift */,
 			);
 			path = Agenda;
 			sourceTree = "<group>";
@@ -282,6 +299,14 @@
 				C1C3DDF129F310DB001D277C /* MiembrosDetail+ViewController.swift */,
 			);
 			path = Miembros;
+			sourceTree = "<group>";
+		};
+		C1D7660B2A1FD58D00B9EFA3 /* Miembro */ = {
+			isa = PBXGroup;
+			children = (
+				C1D7660C2A1FD5A700B9EFA3 /* MiembroModel.swift */,
+			);
+			path = Miembro;
 			sourceTree = "<group>";
 		};
 		C1FBCC1629F0A5CE00C14A9F = {
@@ -411,6 +436,7 @@
 		C1FBCC4129F0A6BB00C14A9F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C1D7660B2A1FD58D00B9EFA3 /* Miembro */,
 				C19FAEBB29F0C1C80011A3B3 /* Agenda */,
 				C19FAEB829F0C1BC0011A3B3 /* Citizen Report */,
 				C19FAEB529F0C1AD0011A3B3 /* Sympathizers */,
@@ -510,23 +536,28 @@
 				C170DA5F29F902FF0000B965 /* Loader+Extension.swift in Sources */,
 				C187E85729F3956A00E06AF7 /* SympathizersViewModel.swift in Sources */,
 				C19FAEBF29F0C2B30011A3B3 /* Home+ViewController.swift in Sources */,
+				C1D766152A1FD5EA00B9EFA3 /* HomeModel.swift in Sources */,
 				C1C3DDF029F30F8D001D277C /* SympathizersForm+ViewController.swift in Sources */,
 				C187E85329F3954D00E06AF7 /* AgendaViewModel.swift in Sources */,
+				C1D7660D2A1FD5A700B9EFA3 /* MiembroModel.swift in Sources */,
 				C1FBCC2729F0A5CE00C14A9F /* Auth+ViewController.swift in Sources */,
 				C1FBCC4329F0A6EE00C14A9F /* Color+Extension.swift in Sources */,
 				C19FAECB29F0F7C90011A3B3 /* TabbarController.swift in Sources */,
+				C1D766112A1FD5CB00B9EFA3 /* CitizenReportModel.swift in Sources */,
 				C19FAEC329F0C2D20011A3B3 /* CitizenReport+ViewController.swift in Sources */,
 				C19FAEC129F0C2C20011A3B3 /* Sympathizers+ViewController.swift in Sources */,
 				C1FBCC3C29F0A67D00C14A9F /* IBInspectable+Extensions.swift in Sources */,
 				C187E85029F37C2600E06AF7 /* MiembroSelected+TableViewCell.swift in Sources */,
 				C19FAEC529F0C2DE0011A3B3 /* Agenda+ViewController.swift in Sources */,
 				C1B5F78429F1AC7500796C16 /* Agenda+TableViewCell.swift in Sources */,
+				C1D766172A1FD5F900B9EFA3 /* AuthModel.swift in Sources */,
 				C15B840629F33E9700C491A7 /* Miembro+TableViewCell.swift in Sources */,
 				C19FAEC729F0EEA00011A3B3 /* KeyboardManager.swift in Sources */,
 				C1DE4F8529F8DB58007A8B7E /* Extension+ViewController.swift in Sources */,
 				C1C3DDEC29F2FAA0001D277C /* Miembros+ViewController.swift in Sources */,
 				C15B840229F33E8200C491A7 /* Sympathizer+TableViewCell.swift in Sources */,
 				C1866EE529F6ED33004BAB01 /* Simple+TableViewCell.swift in Sources */,
+				C1D766132A1FD5D700B9EFA3 /* SympathizersModel.swift in Sources */,
 				C19FAEBD29F0C2420011A3B3 /* Example+ViewController.swift in Sources */,
 				C1FBCC2329F0A5CE00C14A9F /* AppDelegate.swift in Sources */,
 				C187E85929F3957100E06AF7 /* HomeViewModel.swift in Sources */,
@@ -535,6 +566,7 @@
 				C187E85529F3955C00E06AF7 /* CitizenReportViewModel.swift in Sources */,
 				C1C3DDEE29F30F3E001D277C /* SympathizersDetail+ViewController.swift in Sources */,
 				C187E85E29F3961E00E06AF7 /* MiembrosViewModel.swift in Sources */,
+				C1D7660F2A1FD5B700B9EFA3 /* AgendaModel.swift in Sources */,
 				C1866EE129F6DA52004BAB01 /* SympathizerDetail+TableViewCell.swift in Sources */,
 				C1FBCC2529F0A5CE00C14A9F /* SceneDelegate.swift in Sources */,
 			);
@@ -686,7 +718,8 @@
 				DEVELOPMENT_TEAM = RG9DD7MR44;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PoliticosTRC/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PRI;
+				INFOPLIST_KEY_CFBundleDisplayName = Roman;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Permiso para el uso de la camara";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Privacy - Location Always and When In Use Usage Description";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Privacy - Location Always Usage Description";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Privacy - Location When In Use Usage Description";
@@ -694,13 +727,14 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.solidusystems.PoliticosTRC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solidusystems.RomanPRI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -718,7 +752,8 @@
 				DEVELOPMENT_TEAM = RG9DD7MR44;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PoliticosTRC/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PRI;
+				INFOPLIST_KEY_CFBundleDisplayName = Roman;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Permiso para el uso de la camara";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Privacy - Location Always and When In Use Usage Description";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Privacy - Location Always Usage Description";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Privacy - Location When In Use Usage Description";
@@ -726,13 +761,14 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.solidusystems.PoliticosTRC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solidusystems.RomanPRI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

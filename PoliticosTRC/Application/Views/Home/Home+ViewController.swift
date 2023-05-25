@@ -23,21 +23,21 @@ class Home_ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
-
+    
     @IBOutlet weak var lastlbl: UILabel!
     
     
@@ -53,7 +53,7 @@ class Home_ViewController: UIViewController {
     // MARK: - IBAction
     
     @IBOutlet weak var scrollView: UIScrollView!
-
+    
 }
 
 

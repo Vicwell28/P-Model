@@ -15,19 +15,19 @@ class MiembrosViewModel {
     var dataSourceMiemborsWithLevel = [
         MiembroModelWithLevel(
             level: MiembroLevelModel(level: "Cordinador Estatal"),
-            miembros: miembrosGenerator(max: 10).shuffled()),
+            miembros: miembrosGenerator(max: 0).shuffled()),
         MiembroModelWithLevel(
             level: MiembroLevelModel(level: "Corordinador Regional"),
-            miembros: miembrosGenerator(max: 20).shuffled()),
+            miembros: miembrosGenerator(max: 5).shuffled()),
         MiembroModelWithLevel(
             level: MiembroLevelModel(level: "Coordinador Distrital"),
-            miembros: miembrosGenerator(max: 30).shuffled()),
+            miembros: miembrosGenerator(max: 10).shuffled()),
         MiembroModelWithLevel(
             level: MiembroLevelModel(level: "Coordinador de Sección"),
-            miembros: miembrosGenerator(max: 40).shuffled()),
+            miembros: miembrosGenerator(max: 20).shuffled()),
         MiembroModelWithLevel(
             level: MiembroLevelModel(level: "Lider de Colonia"),
-            miembros: miembrosGenerator(max: 50).shuffled()),
+            miembros: miembrosGenerator(max: 100).shuffled()),
     ]
     
     private static let miemborsName : [MiembroNameIs] = [
@@ -45,7 +45,7 @@ class MiembrosViewModel {
     
     private static var miembrosPhotoFemale = (1...20).compactMap { idx in
         print(idx)
-
+        
         return "user_female\(idx)"
     }
     
@@ -57,7 +57,7 @@ class MiembrosViewModel {
             let miembro = miemborsName.shuffled().first!
             let name = miembro.name
             let photo = miembro.isMan ? miembrosPhotoMale.shuffled().first! : miembrosPhotoFemale.shuffled().first!
-
+            
             return MiembroModel(
                 name: name,
                 numbresOfSimpatizantes: "\(Int.random(in: 500...5000))",
@@ -82,54 +82,5 @@ class MiembrosViewModel {
                 ])
         }
     }
-           
-}
-
-
-struct MiembroWithLevelPlain {
-    var tag: Int = 69
-    var tagMiembro = Int.random(in: 0...10101010)
-    var level: String?
-    var isHeader = true
-    var name: String?
-    var numbresOfSimpatizantes: String?
-    var months: Int?
-    var address: String?
-    var photo: String?
-    var telefono: String?
-    var INENumber: String?
-    var supportGranted: [SupportGranted]?
-
-}
-
-struct MiembroModelWithLevel {
-    let level: MiembroLevelModel
-    var miembros: [MiembroModel]
-    let isHeader = true
-}
-
-struct MiembroModel {
-    let name: String
-    let numbresOfSimpatizantes: String
-    let months: Int
-    let address: String
-    let photo: String
-    let telefono: String
-    let INENumber: String
-    var supportGranted : [SupportGranted]
-    let isHeader = false
-}
-
-struct MiembroNameIs{
-    let name: String
-    let isMan: Bool
-}
-
-struct SupportGranted {
-    var dateOfSupportGranted: String
-    var supportedGranded: String
-}
-
-struct MiembroLevelModel {
-    let level: String
+    
 }

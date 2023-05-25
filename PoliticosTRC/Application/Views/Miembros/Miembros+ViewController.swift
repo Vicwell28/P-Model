@@ -252,24 +252,24 @@ extension Miembros_ViewController: UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-
+        
         self.firstConstraintBtnSeach = NSLayoutConstraint(item: self.txtFieldSearch!.superview!.superview!, attribute: .trailing, relatedBy: .equal, toItem: self.txtFieldSearch!.superview!, attribute: .trailing, multiplier: 1.0, constant: 0)
         
         self.view.removeConstraint(self.secondConstraintBtnSeach!)
         self.view.addConstraint(self.firstConstraintBtnSeach!)
-
+        
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }
     }
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
-
+        
         self.secondConstraintBtnSeach = NSLayoutConstraint(item: self.txtFieldSearch!.superview!, attribute: .trailing, relatedBy: .equal, toItem: self.btnSearchCancel, attribute: .leading, multiplier: 1.0, constant: -8.0)
-
+        
         self.view.removeConstraint(self.firstConstraintBtnSeach!)
         self.view.addConstraint(self.secondConstraintBtnSeach!)
-
+        
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }

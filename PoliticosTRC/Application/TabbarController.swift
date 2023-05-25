@@ -30,7 +30,7 @@ class TabbarController: UITabBarController {
             self.myView.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(self.myView)
             self.myView.maskToBounds = true
-        
+            
             let cornerRadius: CGFloat = 30.0
             let maskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             self.myView.layer.cornerRadius = cornerRadius

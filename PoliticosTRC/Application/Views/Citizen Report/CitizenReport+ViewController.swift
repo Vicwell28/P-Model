@@ -65,9 +65,11 @@ class CitizenReport_ViewController: UIViewController {
     @IBOutlet weak var txvDescReport: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var btnSendReport: UIButton!
-    private var indexImageReport: Int = 0
+    //    private var indexImageReport: Int = 0
     private var buttonSenderImageReprot: UIButton!
     // MARK: - Public let / var
+    
+    @IBOutlet weak var viewCorrect: UIView!
     
     @IBOutlet var btnCollectionImageReport: [UIButton]!
     
@@ -100,6 +102,23 @@ class CitizenReport_ViewController: UIViewController {
             
             Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { Timer in
                 self.dismissViewControllerLoader()
+                
+                self.viewCorrect.isHidden = false
+                self.viewCorrect.alpha = 0
+                
+                UIView.animate(withDuration: 1.5) {
+                    self.viewCorrect.alpha = 1
+                } completion: { Bool in
+                    UIView.animate(withDuration: 1.5) {
+                        self.viewCorrect.alpha = 0
+                        
+                    } completion: { Bool in
+                        self.viewCorrect.isHidden = true
+                        
+                    }
+                }
+                
+                
                 
                 self.btnCollectionImageReport.forEach { UIButton in
                     UIButton.isHidden = false
@@ -245,13 +264,8 @@ extension CitizenReport_ViewController: UIImagePickerControllerDelegate, UINavig
             return
         }
         
-        if self.indexImageReport >= self.ImageViewsReportCollection.count - 1 {
-            return
-        }
-        
-        self.btnCollectionImageReport[self.indexImageReport].isHidden = true
-        self.imgCollectionReport[self.indexImageReport].image = image
-        self.indexImageReport += 1
+        self.btnCollectionImageReport[self.buttonSenderImageReprot.tag].isHidden = true
+        self.imgCollectionReport[self.buttonSenderImageReprot.tag].image = image
     }
     
 }

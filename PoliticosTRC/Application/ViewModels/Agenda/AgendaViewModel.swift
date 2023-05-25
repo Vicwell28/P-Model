@@ -15,14 +15,14 @@ class AgendaViewModel {
     
     private static func randomEvents() ->  [AgendaModel] {
         
-        let data = (0...100).map { _ in
-            AgendaModel(
-                title: titleEvent.shuffled().first!,
+        let data = self.titleEventWithImg.map { TitleWithImg in
+            return AgendaModel(
+                title: TitleWithImg.title,
                 place: places.shuffled().first!,
                 address: address.shuffled().first!,
                 date: dates.shuffled().first!,
                 hour: hours.shuffled().first!,
-                img: img.shuffled().first!)
+                img: TitleWithImg.img)
         }
         
         return data
@@ -42,6 +42,18 @@ class AgendaViewModel {
         "Evento Cultural",
         "Graduación UAdeC"
     ].shuffled()
+    
+    
+    private static var titleEventWithImg: [TitleWithImg] = [
+        TitleWithImg(title: "Reunión con empresarios", img: "politicos_28"),
+        TitleWithImg(title: "Carrera a favor beneficecia", img: "politicos_29"),
+        TitleWithImg(title: "Evento Cultural", img: "politicos_30"),
+        TitleWithImg(title: "Graduación UAdeC", img: "politicos_31"),
+        TitleWithImg(title: "Reunión con empresarios", img: "politicos_28"),
+        TitleWithImg(title: "Carrera a favor beneficecia", img: "politicos_29"),
+        TitleWithImg(title: "Evento Cultural", img: "politicos_30"),
+        TitleWithImg(title: "Graduación UAdeC", img: "politicos_31"),
+    ]
     
     private static var dates: [String] = [
         "27 Abril 2023",
@@ -81,13 +93,3 @@ class AgendaViewModel {
     
 }
 
-
-
-struct AgendaModel {
-    let title: String
-    let place: String
-    let address: String
-    let date: String
-    let hour: String
-    let img: String
-}

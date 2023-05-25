@@ -26,7 +26,7 @@ class Agenda_ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         if self.firstConstraintBtnSeach == nil {
             self.firstConstraintBtnSeach = NSLayoutConstraint(item: self.txtFieldSearch!.superview!.superview!, attribute: .trailing, relatedBy: .equal, toItem: self.txtFieldSearch!.superview!, attribute: .trailing, multiplier: 1.0, constant: 0)
             self.view.addConstraint(self.firstConstraintBtnSeach!)
@@ -36,17 +36,17 @@ class Agenda_ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
+        
     }
     
     
@@ -63,12 +63,12 @@ class Agenda_ViewController: UIViewController {
                 })
             }
             self.tableView.reloadData()
-
+            
         }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
-
+    
     // MARK: - IBOutlet
     
     @IBOutlet weak var txtFieldSearch: UITextField!
@@ -103,8 +103,8 @@ extension Agenda_ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dateEvent.text = self.dataSourceFiltred[indexPath.row].date
         cell.hourEvent.text = self.dataSourceFiltred[indexPath.row].hour
         cell.imgEvent.image = UIImage(named: self.dataSourceFiltred[indexPath.row].img)
-
-
+        
+        
         return cell
     }
     
@@ -131,24 +131,24 @@ extension Agenda_ViewController: UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-
+        
         self.firstConstraintBtnSeach = NSLayoutConstraint(item: self.txtFieldSearch!.superview!.superview!, attribute: .trailing, relatedBy: .equal, toItem: self.txtFieldSearch!.superview!, attribute: .trailing, multiplier: 1.0, constant: 0)
         
         self.view.removeConstraint(self.secondConstraintBtnSeach!)
         self.view.addConstraint(self.firstConstraintBtnSeach!)
-
+        
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }
     }
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
-
+        
         self.secondConstraintBtnSeach = NSLayoutConstraint(item: self.txtFieldSearch!.superview!, attribute: .trailing, relatedBy: .equal, toItem: self.btnSearchCancel, attribute: .leading, multiplier: 1.0, constant: -8.0)
-
+        
         self.view.removeConstraint(self.firstConstraintBtnSeach!)
         self.view.addConstraint(self.secondConstraintBtnSeach!)
-
+        
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }
