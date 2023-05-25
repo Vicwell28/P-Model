@@ -5,6 +5,26 @@
 //  Created by soliduSystem on 19/04/23.
 //
 
+/*
+Clase `Auth_ViewController`
+
+- El código comienza con algunas importaciones y la declaración de la clase `Auth_ViewController`, que hereda de `UIViewController`.
+
+- Hay una anulación de la variable computada `preferredStatusBarStyle` para establecer el estilo de barra de estado en `.lightContent`.
+
+- El código contiene varios métodos de anulación de ciclo de vida del controlador de vista, como `viewDidLoad`, `viewWillAppear`, `viewDidAppear`, `viewWillDisappear` y `viewDidDisappear`. Estos métodos se llaman en diferentes momentos durante el ciclo de vida del controlador de vista y se pueden usar para realizar configuraciones, realizar animaciones y administrar la visibilidad de la vista.
+
+- Hay un método `tapScrollView` que se llama cuando se toca la vista y se utiliza para ocultar el teclado.
+- Hay dos acciones de botón: `actionLoginDown` y `actionLoginUp`. Estos métodos se llaman cuando se presiona y se suelta un botón respectivamente. La acción `actionLoginUp` incluye una animación y luego realiza una verificación de inicio de sesión.
+
+- La clase implementa el protocolo `UITextFieldDelegate` y contiene métodos relacionados con el teclado, como `keyboardWillShow` y `keyboardWillHide`, que se llaman cuando se muestra y se oculta el teclado respectivamente.
+- Hay varias propiedades IBOutlet, como `scrollView`, `imageViewName`, `txtName`, `txtPassword`, `btnSend`, `imageViewNameTop` y `txtNameTop`, que están conectadas a elementos de la interfaz de usuario en el archivo de diseño.
+
+- El código también contiene extensiones para agregar funcionalidad adicional al controlador de vista, pero en el código proporcionado no se implementa ninguna funcionalidad específica.
+
+En general, el código estar relacionado con la autenticación en la aplicación "PoliticosTRC". Proporciona funcionalidad para mostrar y ocultar elementos de la interfaz de usuario, gestionar el teclado y realizar verificaciones de inicio de sesión.
+*/
+
 import UIKit
 
 class Auth_ViewController: UIViewController {

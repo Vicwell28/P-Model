@@ -5,6 +5,29 @@
 //  Created by soliduSystem on 21/04/23.
 //
 
+/*
+Implementación de la clase `Miembros_ViewController`, que es una subclase de `UIViewController`. 
+
+- El código comienza importando el módulo necesario: `UIKit`.
+
+- La clase `Miembros_ViewController` tiene varios métodos de ciclo de vida (`viewDidLoad`, `viewWillAppear`, etc.) y extensiones para implementar protocolos como `UITableViewDataSource`, `UITableViewDelegate` y `UITextFieldDelegate`.
+
+- El método `viewDidLoad` se implementa para configurar la vista después de que se haya cargado. Aquí se realizan varias configuraciones, como establecer los delegados de la tabla (`tableView`), registrar las celdas personalizadas, establecer la altura de las filas y realizar algunas impresiones de depuración.
+
+- El método `viewWillAppear` se implementa para preparar y configurar los datos para mostrar en la tabla (`tableView`) antes de que aparezca la vista.
+
+- El método `prepareMiembroWithLevelPlain` se utiliza para preparar los datos para mostrar en la tabla. Se limpia la fuente de datos existente (`dataSourceMiemborsWithLevel`) y se agregan encabezados y miembros en función del nivel actual (`levelHeader`).
+
+- La extensión `Miembros_ViewController` implementa los métodos requeridos por los protocolos `UITableViewDataSource` y `UITableViewDelegate` para configurar y administrar la tabla.
+- El método `selectUser` se utiliza para manejar el evento de selección de una celda. Dependiendo de la etiqueta (`tag`) del botón de la celda seleccionada, se realiza una acción específica, como navegar a una pantalla de detalle o ajustar el nivel de encabezado.
+
+- Los métodos de la extensión `Miembros_ViewController` conformes al protocolo `UITextFieldDelegate` se utilizan para manejar los eventos relacionados con el campo de texto (`txtFieldSearch`).
+
+- El método `prepare(for segue: UIStoryboardSegue, sender: Any?)` se implementa para preparar los datos antes de realizar una transición de segue. En este caso, se verifica el identificador del segue y se pasa el objeto `MiembroWithLevelPlain` a la vista de destino.
+
+En resumen, el código define un controlador de vista (`Miembros_ViewController`) que se utiliza para mostrar una lista de miembros en una tabla. La tabla tiene encabezados y miembros anidados en función del nivel actual. El controlador de vista implementa métodos de ciclo de vida y delegados de la tabla para configurar la apariencia y el comportamiento de la vista. También se implementan métodos para manejar eventos de selección de celdas y eventos relacionados con el campo de texto.
+*/
+
 import UIKit
 
 class Miembros_ViewController: UIViewController {

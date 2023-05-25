@@ -5,6 +5,34 @@
 //  Created by soliduSystem on 19/04/23.
 //
 
+/*
+Implementación de una vista de controlador para una funcionalidad relacionada con simpatizantes.
+ 
+- La clase `Sympathizers_ViewController` hereda de `UIViewController` y contiene varias funciones de ciclo de vida, como `viewDidLoad()`, `viewWillAppear()`, etc.
+
+- En `viewDidLoad()`, se configura la tabla (`tableView`) para que el controlador actúe como su delegado y fuente de datos. También se establece la altura de las filas de la tabla y se registra una celda personalizada para su uso posterior. Además, se configura el estilo de interfaz de usuario.
+
+- En `viewWillAppear()`, se realizan algunas acciones antes de que la vista aparezca. Si `isPresentForm` es verdadero, se actualiza el origen de datos filtrado (`dataSourceFiltred`) con los datos originales (`dataSoureMiembros`) y se recarga la tabla. Luego, se cambia el valor de `isPresentForm` para evitar la recarga repetida en futuras apariciones de la vista. También se configuran las restricciones del botón de búsqueda si no se han configurado anteriormente.
+
+- Las funciones `viewDidAppear()`, `viewWillDisappear()` y `viewDidDisappear()` no tienen implementaciones adicionales.
+
+- En `prepare(for segue: UIStoryboardSegue, sender: Any?)`, se maneja la preparación para las transiciones de segues. Dependiendo del identificador de segue, se configuran diferentes destinos de transición y se pasan datos relacionados.
+
+- La propiedad `preferredStatusBarStyle` se sobrescribe para establecer el estilo de la barra de estado.
+
+- Hay varias salidas (`@IBOutlet`) conectadas en el código, como `tableView` (tabla), `txtFieldSearch` (campo de texto de búsqueda) y `btnSearchCancel` (botón de cancelar búsqueda).
+
+- La propiedad `dataSourceSympathizers` es una instancia de `MiembrosViewModel` que actúa como el origen de datos para la tabla.
+
+- Hay una variable privada llamada `isPresentForm` que se utiliza para controlar si se debe recargar la tabla al volver a la vista desde una vista de formulario relacionada.
+
+- Hay dos acciones (`@IBAction`) definidas en el código: `seachBarValueChange(_:)` y `actionUp(_:)`. `seachBarValueChange(_:)` se ejecuta cuando el valor del campo de búsqueda cambia y actualiza el origen de datos filtrado en función del texto ingresado. `actionUp(_:)` se ejecuta cuando se presiona un botón y realiza una transición de segue a la vista de formulario de simpatizantes (`SympathizersForm_ViewController`).
+
+- Se implementan extensiones para conformarse a los protocolos `UITableViewDelegate`, `UITableViewDataSource` y `UITextFieldDelegate`. Estas extensiones contienen métodos necesarios para configurar la tabla, como `tableView(_:cellForRowAt:)`, `tableView(_:numberOfRowsInSection:)`, `tableView(_:didSelectRowAt:)`, y también para manejar eventos relacionados con el campo de búsqueda.
+
+En resumen, este código implementa la lógica y la interfaz de usuario para una funcionalidad de simpatizantes en la aplicación "PoliticosTRC". Muestra una lista de simpatizantes en una tabla y permite buscar simpatizantes por su nombre. También proporciona la capacidad de seleccionar un simpat
+*/
+
 import UIKit
 
 class Sympathizers_ViewController: UIViewController {

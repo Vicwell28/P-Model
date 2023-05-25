@@ -5,6 +5,29 @@
 //  Created by soliduSystem on 19/04/23.
 //
 
+/*
+Implementación de la clase `CitizenReport_ViewController`, que es una subclase de `UIViewController`. 
+
+- El código comienza importando los módulos necesarios: `UIKit`, `MapKit` y `CoreLocation`.
+
+- La clase `CitizenReport_ViewController` declara propiedades y variables, incluyendo elementos de IU (`IBOutlet`) como botones, vistas de imagen y vistas de mapa (`mapKit`). También hay propiedades relacionadas con la ubicación y la gestión de ubicaciones, como `locationManager` y `currentLocation`.
+
+- Hay varios métodos de ciclo de vida (`viewDidLoad`, `viewWillAppear`, etc.) que se utilizan para configurar y administrar el ciclo de vida de la vista.
+
+- Dentro de `viewWillAppear`, se configuran algunas propiedades de las vistas de imagen, como esquinas redondeadas, sombras y máscaras de capa.
+
+- Los métodos `actionDown` y `actionUp` son controladores de eventos para los botones. En `actionUp`, se realiza una animación y luego se restablecen algunos elementos de la interfaz de usuario a su estado inicial.
+- Los métodos `actionSelectImageReprot` y `tapBtnReport` son controladores de eventos para los botones relacionados con la selección de imágenes y el informe de ciudadano. Estos métodos actualizan la interfaz de usuario en respuesta a las interacciones del usuario.
+
+- Hay dos enumeraciones definidas, `UnselectedImageCitizenReport` y `SelectedImageCitizenReport`, que contienen nombres de imágenes utilizadas en el informe de ciudadano.
+
+- La extensión `CitizenReport_ViewController` contiene métodos y funciones adicionales, como `showAlerActionSheet`, que muestra un menú de acción para tomar una foto o abrir la galería, y métodos relacionados con la selección de imágenes y la administración del texto del informe (`UITextViewDelegate`).
+
+- También hay extensiones para servicios específicos, como la administración de ubicaciones (`CLLocationManagerDelegate`) y la administración del mapa (`MKMapViewDelegate`).
+
+En resumen, el código define una vista de controlador de informe de ciudadano que permite al usuario seleccionar una categoría de informe, agregar una descripción y adjuntar imágenes. También se utiliza Core Location y MapKit para mostrar la ubicación del usuario en un mapa.
+*/
+
 import UIKit
 import MapKit
 import CoreLocation

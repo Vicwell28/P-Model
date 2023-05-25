@@ -5,6 +5,22 @@
 //  Created by soliduSystem on 21/04/23.
 //
 
+/*
+Clase llamada `MiembrosViewModel`.
+
+La clase `MiembrosViewModel` tiene varias propiedades y métodos para manejar los datos de los miembros.
+
+La propiedad `dataSoureMiembros` es una matriz de objetos `MiembroModel` que se inicializa con el resultado de llamar a la función `miembrosGenerator(max: 60)` y luego se mezcla aleatoriamente.
+
+La propiedad `dataSourceMiemborsWithLevel` es una matriz de objetos `MiembroModelWithLevel` que representa los miembros agrupados por nivel. Cada objeto `MiembroModelWithLevel` contiene un nivel de miembro representado por un objeto `MiembroLevelModel` y una matriz de miembros representados por objetos `MiembroModel`. Los miembros se generan aleatoriamente llamando a la función `miembrosGenerator(max: X)` donde `X` representa el número máximo de miembros para cada nivel.
+
+La clase también tiene algunas variables estáticas privadas que contienen datos para generar miembros de forma aleatoria. Estos datos incluyen nombres de miembros (`miemborsName`), fotos de hombres (`miembrosPhotoMale`) y fotos de mujeres (`miembrosPhotoFemale`).
+
+La función estática privada `miembrosGenerator(max: Int)` se utiliza para generar una matriz de objetos `MiembroModel`. Cada objeto `MiembroModel` se genera aleatoriamente utilizando nombres, fotos, números de simpatizantes, meses de membresía, información de contacto y una lista de apoyos otorgados.
+
+En resumen, la clase `MiembrosViewModel` se utiliza para proporcionar y manejar datos de miembros en la aplicación "PoliticosTRC". Los datos incluyen información como nombres, fotos, números de simpatizantes, meses de membresía, información de contacto y apoyos otorgados. Los miembros se agrupan por niveles y se generan aleatoriamente utilizando nombres y fotos predefinidos.
+*/
+
 import Foundation
 
 class MiembrosViewModel {

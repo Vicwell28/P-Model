@@ -5,6 +5,18 @@
 //  Created by soliduSystem on 21/04/23.
 //
 
+/*
+Clase llamada `AgendaViewModel`.
+
+La clase `AgendaViewModel` tiene una propiedad pública llamada `dataSource`, que se inicializa con el resultado de llamar a la función estática `randomEvents()`. Esta propiedad se utiliza como origen de datos para la agenda.
+
+La clase también tiene varias variables estáticas privadas que contienen datos para la generación aleatoria de eventos de la agenda. Estos datos incluyen lugares (`places`), títulos de eventos (`titleEvent`), títulos de eventos con imágenes (`titleEventWithImg`), fechas (`dates`), horas (`hours`), direcciones (`address`) e imágenes (`img`).
+
+La función estática privada `randomEvents()` se utiliza para generar eventos aleatorios para la agenda. Utiliza los datos de `titleEventWithImg`, `places`, `address`, `dates`, `hours` y genera objetos de tipo `AgendaModel`. Cada objeto `AgendaModel` contiene un título, lugar, dirección, fecha, hora e imagen de forma aleatoria seleccionados de las listas de datos.
+
+En resumen, la clase `AgendaViewModel` se utiliza para proporcionar datos aleatorios para la agenda de políticos en la aplicación "PoliticosTRC". Los datos incluyen información sobre los eventos, como su título, lugar, dirección, fecha, hora e imagen.
+*/
+
 import Foundation
 
 class AgendaViewModel {

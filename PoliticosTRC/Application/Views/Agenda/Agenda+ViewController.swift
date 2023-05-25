@@ -5,6 +5,34 @@
 //  Created by soliduSystem on 19/04/23.
 //
 
+/*
+Clase llamada `Agenda_ViewController`, que es una subclase de `UIViewController`. La clase se utiliza para mostrar una lista de eventos en una agenda.
+
+El código incluye varios métodos de ciclo de vida (`viewDidLoad()`, `viewWillAppear()`, `viewDidAppear()`, `viewWillDisappear()`, `viewDidDisappear()`) que se ejecutan en diferentes momentos del ciclo de vida de la vista.
+
+El método `viewDidLoad()` realiza varias configuraciones iniciales, como establecer el origen de datos y el delegado de la tabla (`tableView`), registrar una celda personalizada para la tabla, configurar la altura de las filas, establecer el estilo de interfaz de usuario, y asignar los datos de la agenda al origen de datos filtrado.
+
+El método `viewWillAppear()` se ejecuta antes de que la vista aparezca en pantalla. En este caso, establece una restricción para el botón de búsqueda (`btnSearchCancel`) si aún no se ha establecido.
+
+El método `viewDidAppear()` se ejecuta después de que la vista aparece en pantalla.
+
+El método `viewWillDisappear()` se ejecuta antes de que la vista desaparezca de la pantalla.
+
+El método `viewDidDisappear()` se ejecuta después de que la vista ha desaparecido de la pantalla.
+
+El método `seachBarValueChange(_:)` es un IBAction que se activa cuando se cambia el valor del campo de búsqueda (`txtFieldSearch`). Dependiendo del texto ingresado, filtra los datos de la agenda y actualiza la tabla con los resultados filtrados.
+
+La propiedad `preferredStatusBarStyle` devuelve el estilo de la barra de estado de la vista, en este caso, `.lightContent`.
+
+La clase también tiene varias propiedades IBOutlet que representan elementos de la interfaz de usuario, como el campo de búsqueda (`txtFieldSearch`), el botón de cancelar búsqueda (`btnSearchCancel`) y la tabla (`tableView`). Además, hay propiedades para el modelo de vista de la agenda (`agendaViewModel`) y los datos filtrados (`dataSourceFiltred`).
+
+La clase implementa las funciones requeridas del protocolo `UITableViewDelegate` y `UITableViewDataSource` para configurar y mostrar los datos en la tabla. La función `cellForRowAt` configura las celdas de la tabla con los datos de los eventos, mientras que las funciones `numberOfRowsInSection` y `didSelectRowAt` especifican el número de filas y el comportamiento al seleccionar una fila, respectivamente.
+
+Además, hay extensiones para implementar el protocolo `UITextFieldDelegate` y otros métodos o servicios adicionales, aunque en el código proporcionado no hay implementaciones específicas en estas secciones.
+
+En resumen, la clase `Agenda_ViewController` se utiliza para mostrar una lista de eventos en una agenda en la aplicación "PoliticosTRC". Proporciona funcionalidad para filtrar los eventos mediante un campo de búsqueda y configura la apariencia y el comportamiento de la interfaz de usuario relacionada con la agenda.
+*/
+
 import UIKit
 
 class Agenda_ViewController: UIViewController {

@@ -5,6 +5,35 @@
 //  Created by soliduSystem on 21/04/23.
 //
 
+
+/*
+Implementación de una vista de controlador de una aplicación llamada "PoliticosTRC" que parece estar relacionada con la captura de datos de simpatizantes políticos.
+
+- El código importa el módulo UIKit, que es el marco principal para construir interfaces de usuario en aplicaciones iOS.
+
+- La clase principal es `SympathizersForm_ViewController`, que hereda de `UIViewController`.
+
+- El código anula varias funciones de ciclo de vida del controlador de vista, como `viewDidLoad`, `viewWillAppear`, `viewDidAppear`, `viewWillDisappear` y `viewDidDisappear`, para realizar diversas tareas cuando se ejecutan estos eventos del ciclo de vida.
+
+- El método `viewDidLoad` configura las notificaciones para mostrar y ocultar el teclado y establece el estilo de interfaz de usuario en `.light`.
+
+- El método `viewWillAppear` configura el tamaño de contenido de la vista de desplazamiento (`scrollView`) y realiza ajustes visuales en la imagen de perfil (`imgPerfil`).
+
+- El método `btnTakePhoto` se invoca cuando se presiona un botón para tomar una foto y muestra una hoja de acción para seleccionar una fuente de foto (cámara o galería).
+
+- El método `verifyData` realiza la verificación de los datos ingresados por el usuario y muestra mensajes de error visualmente si faltan datos. Si todos los datos están presentes, muestra una animación visual y actualiza una lista de miembros (`miembrosList`) con los datos ingresados.
+
+- El método `mal` realiza una animación visual para indicar un error en un campo de entrada.
+
+- La extensión `SympathizersForm_ViewController` implementa los delegados `UITextFieldDelegate` y `UITextViewDelegate` para gestionar el desplazamiento y el manejo del teclado cuando los campos de texto se activan.
+
+- La extensión también proporciona funciones para mostrar una hoja de acción que permite al usuario tomar una foto o seleccionar una imagen de la galería.
+
+- La extensión `SympathizersForm_ViewController` implementa el delegado `UIImagePickerControllerDelegate` y `UINavigationControllerDelegate` para capturar la imagen seleccionada por el usuario y mostrarla en `imgPerfil`.
+
+En general, este código se encarga de la lógica relacionada con la captura de datos de simpatizantes políticos, la validación de los datos ingresados y la interacción con la cámara y la galería para seleccionar una foto de perfil.
+*/
+
 import UIKit
 
 class SympathizersForm_ViewController: UIViewController {

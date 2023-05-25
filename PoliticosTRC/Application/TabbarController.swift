@@ -5,6 +5,30 @@
 //  Created by soliduSystem on 19/04/23.
 //
 
+/*
+Implementación de un controlador de pestañas (`UITabBarController`) en iOS utilizando Swift y UIKit. El controlador de pestañas se define en la clase `TabbarController`, que hereda de `UITabBarController`.
+
+A continuación se muestra una descripción general del código:
+
+1. Se importa el módulo UIKit para acceder a las clases y funciones necesarias.
+
+2. Se define la clase `TabbarController` que hereda de `UITabBarController`.
+
+3. Se declaran varias propiedades privadas, como `myView`, `myViewBackground`, `myImageLogo` y `myHStack`, que se utilizan para crear la interfaz de usuario de la barra de pestañas.
+
+4. Se inicializa un array llamado `dataSourceTapItems` que contiene objetos de la estructura `TapItems`. Cada objeto `TapItems` representa un elemento de pestaña y contiene un índice, una imagen y un nombre.
+
+5. En el método `viewWillAppear`, se crea la interfaz de usuario de la barra de pestañas si no se ha creado antes. Esto se hace configurando varias vistas (`UIView`), etiquetas (`UILabel`), imágenes (`UIImageView`) y botones (`UIButton`) de acuerdo con los datos proporcionados en `dataSourceTapItems`.
+
+6. Se agregan restricciones de autolayout a las vistas creadas para definir su posición y tamaño en relación con otras vistas.
+
+7. Se implementa la función `selectedIndexTap` como un selector de acción para los botones de las pestañas. Esta función se ejecuta cuando se selecciona una pestaña y realiza algunas operaciones, como cambiar el color de fondo de la vista de la pestaña seleccionada y realizar animaciones en las vistas de etiquetas e imágenes de la pestaña seleccionada.
+
+8. La estructura `TapItems` se define para representar los datos de cada elemento de pestaña. Tiene propiedades como `index` (índice de la pestaña), `image` (nombre de la imagen) y `name` (nombre de la pestaña).
+
+En general, este código crea una barra de pestañas personalizada en la que cada pestaña tiene una imagen y un nombre. Al seleccionar una pestaña, se realizan cambios visuales en la interfaz de usuario para resaltar la pestaña seleccionada.
+*/
+
 import UIKit
 
 class TabbarController: UITabBarController {

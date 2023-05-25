@@ -5,6 +5,37 @@
 //  Created by soliduSystem on 21/04/23.
 //
 
+
+/*
+El código proporcionado es para una vista de detalle de simpatizantes en una aplicación llamada "PoliticosTRC". La clase `SympathizersDetail_ViewController` hereda de `UIViewController` y contiene varias funciones de anulación y propiedades relacionadas con la visualización y la interacción del usuario.
+
+Aquí hay una descripción general de las secciones principales del código:
+
+- En el método `viewDidLoad`, se registran las celdas de la tabla, se establecen los delegados de la tabla y se configuran las alturas de las filas. También se inicializan algunas propiedades y se asignan datos a la fuente de datos filtrada.
+
+- En el método `viewWillAppear`, se configuran varios elementos de la interfaz de usuario, como la imagen de perfil, el nombre y la duración de ser simpatizante. También se configuran las restricciones de diseño para la barra de búsqueda si aún no se han configurado.
+
+- En el método `viewDidAppear`, no hay ninguna lógica específica implementada.
+
+- En el método `viewWillDisappear` y `viewDidDisappear`, tampoco hay ninguna lógica específica implementada.
+
+- Hay varias propiedades `IBOutlet` que están conectadas a elementos de la interfaz de usuario en el Storyboard, como botones, vistas de tabla, imágenes y etiquetas.
+
+- Hay algunas acciones `IBAction` que se activan cuando se realiza una acción en elementos de la interfaz de usuario, como botones. Por ejemplo, los métodos `actionDown` y `actionUp` se utilizan para animar un botón cuando se presiona y se suelta.
+
+- Hay una extensión para `UIImageView` que proporciona un método `setCircle()` para redondear la imagen de perfil.
+
+- Hay extensiones para implementar los protocolos `UITextFieldDelegate`, `UITableViewDelegate` y `UITableViewDataSource`. Estas extensiones contienen la lógica para configurar las celdas y manejar eventos como la selección de filas y la edición de texto en el campo de búsqueda.
+
+- La clase también tiene una propiedad `miembroDetail` de tipo `MiembroModel`, que almacena información sobre el simpatizante actual. La información se utiliza para configurar la vista de detalle.
+
+- La clase también tiene algunas propiedades privadas que almacenan datos relacionados con el apoyo recibido por el simpatizante y los datos filtrados para la búsqueda en la tabla.
+
+- Las extensiones `Private Func` y `Services` están vacías y no contienen ninguna lógica específica.
+
+En general, este código implementa la funcionalidad de visualización y búsqueda de detalles de simpatizantes en una aplicación. Proporciona una interfaz de usuario para mostrar la información del simpatizante, así como el historial de apoyo recibido. También permite al usuario buscar en la lista de apoyos y agregar nuevos apoyos al simpatizante.
+*/
+
 import UIKit
 
 class SympathizersDetail_ViewController: UIViewController {
